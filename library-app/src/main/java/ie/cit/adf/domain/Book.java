@@ -4,39 +4,39 @@ import java.util.UUID;
 
 public class Book {
 
-	private String book_id;
-	private String book_genre;
-	private String book_title;
-	private String book_author;
-	private String book_publisher;
+	private String bookId;
+	private String bookGenre;
+	private String bookTitle;
+	private String bookAuthor;
+	private String bookPublisher;
 	private boolean available;
 
 	public Book() {
-		this.book_id = UUID.randomUUID().toString();
+		this.bookId = UUID.randomUUID().toString();
 	}
 
 	public String getBookId() {
-		return book_id;
+		return bookId;
 	}
 
-	public void setBookId(String book_id) {
-		this.book_id = book_id;
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
 	}
 
 	public String getBookTitle() {
-		return book_title;
+		return bookTitle;
 	}
 
-	public void setBookTitle(String book_title) {
-		this.book_title = book_title;
+	public void setBookTitle(String bookTitle) {
+		this.bookTitle = bookTitle;
 	}
 
 	public String getBookAuthor() {
-		return book_author;
+		return bookAuthor;
 	}
 
-	public void setBookAuthor(String book_author) {
-		this.book_author = book_author;
+	public void setBookAuthor(String bookAuthor) {
+		this.bookAuthor = bookAuthor;
 	}
 
 	public boolean isAvailable() {
@@ -48,26 +48,26 @@ public class Book {
 	}
 
 	public String getBookGenre() {
-		return book_genre;
+		return bookGenre;
 	}
 
-	public void setBookGenre(String book_genre) {
-		this.book_genre = book_genre;
+	public void setBookGenre(String bookGenre) {
+		this.bookGenre = bookGenre;
 	}
 
 	public String getBookPublisher() {
-		return book_publisher;
+		return bookPublisher;
 	}
 
-	public void setBookPublisher(String book_publisher) {
-		this.book_publisher = book_publisher;
+	public void setBookPublisher(String bookPublisher) {
+		this.bookPublisher = bookPublisher;
 	}
 
 	@Override
 	public String toString() {
-		return "Library [book id=" + book_id + ", book genre=" + book_genre
-				+ ", book title=" + book_title + ",book author=" + book_author
-				+ ",book publisher=" + book_publisher + ", available=" + available + "]";
+		return "Library [book id=" + bookId + ", book genre=" + bookGenre
+				+ ", book title=" + bookTitle + ",book author=" + bookAuthor
+				+ ",book publisher=" + bookPublisher + ", available=" + available + "]";
 	}
 
 }

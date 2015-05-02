@@ -12,8 +12,18 @@
 		<property name="password" value="CqMHX4CnK2nhmiYqmpXhsNGde1G1--MT"></property>
 	</bean>
 
-	<bean id="bookRepository" class="ie.cit.adf.dao.JdbcBookRepository">
+	  
+	<bean id="BookRepository" class="ie.cit.adf.dao.JdbcBookRepository">
 		<constructor-arg ref="dataSource"></constructor-arg>
 	</bean>
+	
+	<bean id="UserRepository" class="ie.cit.adf.dao.JdbcUserRepository">
+		<constructor-arg ref="dataSource"></constructor-arg>
+	</bean>
+
+	
+	<!--  
+	<context:component-scan base-package="ie.cit.adf.dao"/>
+	-->
 
 </beans>

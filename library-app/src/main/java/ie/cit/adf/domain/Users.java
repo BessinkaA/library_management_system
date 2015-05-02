@@ -4,72 +4,72 @@ import java.util.UUID;
 
 public class Users {
 	
-		private String user_id;
-		private String user_name;
-		private String user_street_address;
-		private String user_city;
-		private String user_registration_date;
+		private String userId;
+		private String userName;
+		private String userAddress;
+		private String userCity;
+		private String userRegistrationDate;
 
 		public Users() {
-			this.user_id = UUID.randomUUID().toString();
+			this.userId = UUID.randomUUID().toString();
 		}
 
 		
-		public String getUser_id() {
-			return user_id;
+		public String getUserId() {
+			return userId;
 		}
 
 
-		public void setUser_id(String user_id) {
-			this.user_id = user_id;
+		public void setUserId(String userId) {
+			this.userId = userId;
 		}
 
 
-		public String getUser_name() {
-			return user_name;
+		public String getUserName() {
+			return userName;
 		}
 
 
-		public void setUser_name(String user_name) {
-			this.user_name = user_name;
+		public void setUserName(String userName) {
+			this.userName = userName;
 		}
 
 
-		public String getUser_street_address() {
-			return user_street_address;
+		public String getUserAddress() {
+			return userAddress;
 		}
 
 
-		public void setUser_street_address(String user_street_address) {
-			this.user_street_address = user_street_address;
+		public void setUserAddress(String userAddress) {
+			this.userAddress = userAddress;
 		}
 
 
-		public String getUser_city() {
-			return user_city;
+		public String getUserCity() {
+			return userCity;
 		}
 
 
-		public void setUser_city(String user_city) {
-			this.user_city = user_city;
+		public void setUserCity(String userCity) {
+			this.userCity = userCity;
 		}
 
 
-		public String getUser_registration_date() {
-			return user_registration_date;
+		public String getUserRegistrationDate() {
+			return userRegistrationDate;
 		}
 
 
-		public void setUser_registration_date(String user_registration_date) {
-			this.user_registration_date = user_registration_date;
+		public void setUserRegistrationDate(String userRegistrationDate) {
+			this.userRegistrationDate = userRegistrationDate;
 		}
 
 
 		@Override
 		public String toString() {
-			return "Users [user id=" + user_id + ", user name=" + user_name
-					+ ", user address=" + user_street_address + ",user city=" + user_city
-					+ ",user registration date=" + user_registration_date + "]";
+			return "Users [user id=" + userId + ", user name=" + userName
+					+ ", user address=" + userAddress + ",user city=" + userCity
+					+ ",user registration date=" + userRegistrationDate + "]";
 		}
 	
 }

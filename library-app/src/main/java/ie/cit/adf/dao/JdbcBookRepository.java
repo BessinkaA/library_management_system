@@ -8,20 +8,24 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Component;
 
+@Component
 public class JdbcBookRepository implements BookRepository {
 
 	private JdbcTemplate jdbcTemplate;
 
+	@Autowired
 	public JdbcBookRepository(DataSource dataSource) {
 		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
 	public void addBook(Book book) {
 		jdbcTemplate
-				.update("insert into books (book_id, book_genre, book_author, book_title, book_publisher, available) values (?,?,?,?,?,?)",
+				.update("insert into books (bookId, bookGenre, bookAuthor, bookTitle, bookPublisher, available) values (?,?,?,?,?,?)",
 						book.getBookId(), book.getBookGenre(),
 						book.getBookAuthor(), book.getBookTitle(),
 						book.getBookPublisher(), book.isAvailable());
@@ -30,7 +34,7 @@ public class JdbcBookRepository implements BookRepository {
 
 	public List<Book> getAll() {
 		return jdbcTemplate
-				.query("select book_id, book_genre, book_author, book_title, book_publisher, available from books",
+				.query("select bookId, bookGenre, bookAuthor, bookTitle, bookPublisher, available from books",
 						new BookRowMapper());
 	}
 
@@ -39,11 +43,11 @@ public class JdbcBookRepository implements BookRepository {
 class BookRowMapper implements RowMapper<Book> {
 
 	public Book mapRow(ResultSet rs, int rowNum) throws SQLException {
-		String book_id = rs.getString("book_id");
-		String book_genre = rs.getString("book_genre");
-		String book_author = rs.getString("book_author");
-		String book_title = rs.getString("book_title");
-		String book_publisher = rs.getString("book_publisher");
+		String book_id = rs.getString("bookId");
+		String book_genre = rs.getString("bookGenre");
+		String book_author = rs.getString("bookAuthor");
+		String book_title = rs.getString("bookTitle");
+		String book_publisher = rs.getString("bookPublisher");
 		boolean available = rs.getBoolean("available");
 
 		Book book = new Book();
